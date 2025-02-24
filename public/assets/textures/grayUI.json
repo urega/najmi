@@ -1,0 +1,83 @@
+{
+	"textures": [
+		{
+			"image": "grayUI.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 235,
+				"h": 108
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "bg_btn.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 171,
+						"h": 95
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 8,
+						"w": 166,
+						"h": 87
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 166,
+						"h": 87
+					}
+				},
+				{
+					"filename": "stepper_0001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 65,
+						"h": 55
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 65,
+						"h": 52
+					},
+					"frame": {
+						"x": 169,
+						"y": 1,
+						"w": 65,
+						"h": 52
+					}
+				},
+				{
+					"filename": "stepper_0002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 65,
+						"h": 55
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 65,
+						"h": 52
+					},
+					"frame": {
+						"x": 169,
+						"y": 55,
+						"w": 65,
+						"h": 52
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:38bb6f610c493b19c23d74f819f2b2dd:5276a18bf802512c191f5e824d207650:9b7193cdd20589e1f4e0d95f3251e223$"
+	}
+}
