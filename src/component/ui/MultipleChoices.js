@@ -55,7 +55,9 @@ class MultipleChoices extends Phaser.GameObjects.Container {
         .setOrigin(0.5);
 
       btn.on("pointerover", () => btn.setTint(0xdddddd));
-      btn.on("pointerout", () => btn.clearTint());
+      btn.on("pointerout", () => {
+        btn.clearTint();
+      });
 
       btn.on("pointerdown", () => {
         this.scene.disableResetBtn();

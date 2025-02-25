@@ -55,12 +55,28 @@ export class Preloader extends Scene {
       "textures/anim_true.json",
       "assets/textures"
     );
+    this.load.multiatlas(
+      "anim_breathe",
+      "textures/anim_breathe.json",
+      "assets/textures"
+    );
+    this.load.multiatlas(
+      "anim_move",
+      "textures/anim_move.json",
+      "assets/textures"
+    );
+    this.load.multiatlas(
+      "star_pack",
+      "textures/anim_star.json",
+      "assets/textures"
+    );
 
     // Load semua audio dan simpan dalam array
     this.load.audio("pop", ["sfx/pop.mp3"]);
     this.load.audio("click", ["sfx/click.wav"]);
     this.load.audio("true", ["sfx/true.wav"]);
     this.load.audio("false", ["sfx/false.wav"]);
+    this.load.audio("end", ["sfx/end.wav"]);
   }
 
   create() {

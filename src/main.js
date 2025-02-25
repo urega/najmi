@@ -69,16 +69,16 @@ const config = {
         plugin: RoundRectangleCanvasPlugin,
         start: true,
       },
-      {
-        key: "rexDrag",
-        plugin: DragPlugin,
-        start: true,
-      },
-      {
-        key: "rexGlowFilterPipeline",
-        plugin: GlowFilterPipelinePlugin,
-        start: true,
-      },
+      // {
+      //   key: "rexDrag",
+      //   plugin: DragPlugin,
+      //   start: true,
+      // },
+      // {
+      //   key: "rexGlowFilterPipeline",
+      //   plugin: GlowFilterPipelinePlugin,
+      //   start: true,
+      // },
     ],
   },
 };

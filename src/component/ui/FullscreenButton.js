@@ -5,10 +5,10 @@ class FullscreenButton extends Phaser.GameObjects.Container {
 
     // Tombol fullscreen (gambar)
     this.fullscreenImg = scene.add
-      .image(0, 0, "pack", "fs_0001.png")
+      .image(0, 0, "content", "btn_FS_0001.png")
       .setInteractive({ cursor: "pointer" })
-      .setScale(0.7) // Sesuaikan ukuran jika perlu
-      .setOrigin(0.5, 0.5);
+      .setScale(0.95) // Sesuaikan ukuran jika perlu
+      .setOrigin(0.5);
     this.add(this.fullscreenImg);
 
     // Event saat pointer hover
@@ -26,10 +26,10 @@ class FullscreenButton extends Phaser.GameObjects.Container {
       scene.sound.add("pop").play();
       if (scene.scale.isFullscreen) {
         scene.scale.stopFullscreen();
-        this.fullscreenImg.setTexture("pack", "fs_0001.png"); // Ganti dengan tekstur normal
+        this.fullscreenImg.setTexture("content", "btn_FS_0001.png"); // Ganti dengan tekstur normal
       } else {
         scene.scale.startFullscreen();
-        this.fullscreenImg.setTexture("pack", "fs_0002.png"); // Ganti tekstur jika dibutuhkan
+        this.fullscreenImg.setTexture("content", "btn_FS_0002.png"); // Ganti tekstur jika dibutuhkan
       }
     });
 

@@ -12,7 +12,7 @@ export class Game extends Scene {
 
   create() {
     this.add.image(640, 360, "bg");
-    this.fullscreenButton = new FullscreenButton(this, 55, 680);
+    this.fullscreenButton = new FullscreenButton(this, 70, 652.9);
 
     this.createQuestion();
     this.createStars(); // Buat tampilan awal bintang
@@ -42,18 +42,57 @@ export class Game extends Scene {
       frameRate: 30,
       repeat: 0,
     });
+
+    this.anims.create({
+      key: "breatheAnim",
+      frames: this.anims.generateFrameNames("anim_breathe", {
+        prefix: "anim_breathe_",
+        start: 1,
+        end: 28,
+        suffix: ".png",
+        zeroPad: 4,
+      }),
+      frameRate: 30,
+      repeat: -1,
+    });
+    this.anims.create({
+      key: "moveAnim",
+      frames: this.anims.generateFrameNames("anim_move", {
+        prefix: "anim_move_",
+        start: 1,
+        end: 25,
+        suffix: ".png",
+        zeroPad: 4,
+      }),
+      frameRate: 30,
+      repeat: -1,
+    });
   }
 
   createQuestion() {
     if (this.content) this.content.destroy();
     if (this.btnAnswer) this.btnAnswer.destroy();
 
-    this.content = this.add.image(
-      491.95,
-      320,
-      "content",
-      `content_000${this.currentQuestionIndex + 1}.png`
-    );
+    if (this.currentQuestionIndex === 1) {
+      this.content = this.add
+        .sprite(491.95, 320, "anim_breathe_0001.png")
+        .setScale(0.75)
+        .setOrigin(0.5);
+      this.content.play("breatheAnim");
+    } else if (this.currentQuestionIndex === 3) {
+      this.content = this.add
+        .sprite(491.95, 320, "anim_move_0001.png")
+        .setScale(0.75)
+        .setOrigin(0.5);
+      this.content.play("moveAnim");
+    } else {
+      this.content = this.add.image(
+        491.95,
+        320,
+        "content",
+        `content_000${this.currentQuestionIndex + 1}.png`
+      );
+    }
 
     this.btnAnswer = new MultipleChoices(this, 901.9, 181.9);
 
@@ -61,7 +100,7 @@ export class Game extends Scene {
 
     this.resetButton = new CustomButton(
       this,
-      1213.95,
+      1213,
       652.9,
       "content",
       "btn_reset.png",
@@ -108,6 +147,8 @@ export class Game extends Scene {
     if (this.currentQuestionIndex < 5) {
       this.createQuestion();
     } else {
+      this.sound.add("end").play();
+
       this.enableResetBtn();
     }
   }
